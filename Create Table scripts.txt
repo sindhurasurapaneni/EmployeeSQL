@@ -1,0 +1,97 @@
+
+CREATE TABLE departments(
+dept_no char(4) NOT NULL,
+dept_name varchar(30) NOT NULL
+);
+
+ALTER TABLE departments 
+   ADD CONSTRAINT PK_deptID PRIMARY KEY (dept_no);
+   
+ select * from departments
+--------------------------------------------------------
+CREATE TABLE employees
+(
+emp_no char(11) NOT NULL,
+emp_title_id char(5),
+birth_date	date,
+first_name	varchar(30),
+last_name	varchar(30),
+sex	  char(1),
+hire_date date
+)
+
+ALTER TABLE employees 
+   ADD CONSTRAINT PK_empID PRIMARY KEY (emp_no);
+   
+ select * from employees;
+
+
+
+-------------------------------------------------------------
+
+CREATE TABLE dept_emp(
+emp_no char(11) NOT NULL,
+dept_no char(4) NOT NULL
+)
+
+ALTER TABLE dept_emp 
+   ADD CONSTRAINT PK_deptempID PRIMARY KEY (emp_no, dept_no);
+   
+ select * from dept_emp;
+ 
+---------------------------------------------------------------------
+CREATE TABLE dept_manager(
+dept_no char(4) NOT NULL,
+	emp_no char(11) NOT NULL
+
+)
+
+ALTER TABLE dept_manager 
+   ADD CONSTRAINT PK_deptmanagerID PRIMARY KEY (dept_no,emp_no);
+   
+ select * from dept_manager;
+ 
+ ------------------------------------------------------------------------
+
+CREATE TABLE titles(
+	title_id char(5) NOT NULL,
+	title varchar(30) NOT NULL
+
+);
+
+ALTER TABLE titles 
+   ADD CONSTRAINT PK_titleID PRIMARY KEY (title_id);
+   
+ select * from titles;
+ 
+-----------------------------------------------------------------------
+CREATE TABLE salaries(
+	emp_no char(11) NOT NULL,
+    salary char(11) NOT NULL
+
+);
+
+ALTER TABLE salaries 
+   ADD CONSTRAINT pk_salaries PRIMARY KEY (emp_no);
+   
+ select * from salaries;
+ 
+ ---------------------------------------------------------------------------------------
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
